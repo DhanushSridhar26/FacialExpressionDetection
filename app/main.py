@@ -75,5 +75,4 @@ def predict(filename):
 	print(data)
 	return render_template("template.html" , data=data) 
 
-if __name__ == '__main__':
-   app.run(host="localhost",port=5000, debug = True)
+
