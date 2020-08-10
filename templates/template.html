@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+   <!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  {%block hhhh%}{{super()}}{%endblock%}
+{% block head %}
+        {% if filename %}
+        <div class="container" >
+         <img src="{{url_for('static', filename = 'image/'+filename)}}" class="img-fluid mx-auto" width="500px" height="500px" />
+         <form action="/predict/{{filename}}" class="form-group pt-5"><input type="submit" name="button" value="predict" class="btn btn-primary mx-auto"/>
+         </form>
+         {%endif%}
+         {% if data %}
+         <div class="container pt-5">
+           <h1> The predicted facial expression : <mark>{{data}}</mark> </h1>
+         </div>
+
+         {%endif%}
+
+ {% endblock %}
+  
